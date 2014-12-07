@@ -177,9 +177,9 @@ class Team(DatabaseObject):
         return not self.__eq__(other)
 
     def __cmp__(self, other):
-        if len(self.money) < len(other.money):
+        if self.money < other.money:
             return 1
-        elif len(self.money) == len(other.money):
+        elif self.money == other.money:
             return 0
         else:
             return -1
